@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS client (
   name varchar(255) NOT NULL,
   surname varchar(255) NOT NULL,
   phone varchar(255) NOT NULL,
-  address varchar(255) DEFAULT NULL,
+  address text DEFAULT NULL,
   PRIMARY KEY (id),
   UNIQUE(name, surname),
   UNIQUE(phone)
