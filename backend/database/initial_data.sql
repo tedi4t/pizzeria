@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS good (
   "/salats/greek_salat.png"
 );
 
-CREATE TABLE IF NOT EXISTS order (
+CREATE TABLE IF NOT EXISTS order_ (
   1
 );
 

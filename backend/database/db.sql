@@ -26,11 +26,11 @@ CREATE TABLE IF NOT EXISTS hall (
 
 CREATE TABLE IF NOT EXISTS good (
   id serial NOT NULL,
-  type_id NOT NULL,
+  type_id integer NOT NULL,
   name varchar(255) NOT NULL,
   description text DEFAULT NULL,
-  weight int(10) NOT NULL,
-  price int(10) NOT NULL,
+  weight integer NOT NULL,
+  price integer NOT NULL,
   photo text DEFAULT NULL,
   PRIMARY KEY (id),
   CONSTRAINT good_column_2_good_type_id_foreign FOREIGN KEY (type_id) REFERENCES good_type (id),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS good (
   UNIQUE (photo)
 );
 
-CREATE TABLE IF NOT EXISTS order (
+CREATE TABLE IF NOT EXISTS order_ (
   id serial NOT NULL,
   client_id integer NOT NULL,
   PRIMARY KEY (id),
@@ -59,9 +59,9 @@ CREATE TABLE IF NOT EXISTS order_element (
   id serial NOT NULL,
   order_id integer NOT NULL,
   good_id integer NOT NULL,
-  quantity int(10) NOT NULL,
+  quantity integer NOT NULL,
   PRIMARY KEY (id),
-  CONSTRAINT order_element_order_id_order_id_foreign FOREIGN KEY (order_id) REFERENCES order (id),
+  CONSTRAINT order_element_order_id_order_id_foreign FOREIGN KEY (order_id) REFERENCES order_ (id),
   CONSTRAINT order_element_good_id_good_id_foreign FOREIGN KEY (good_id) REFERENCES good (id),
   UNIQUE(order_id, good_id)
 );
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS order_element (
 CREATE TABLE IF NOT EXISTS sale (
   id serial NOT NULL,
   good_id integer NOT NULL,
-  price int(10) NOT NULL,
+  price integer NOT NULL,
   PRIMARY KEY (id),
   CONSTRAINT sale_good_id_good_id_foreign FOREIGN KEY (good_id) REFERENCES good (id),
   UNIQUE(good_id)
