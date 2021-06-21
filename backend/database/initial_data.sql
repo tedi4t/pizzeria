@@ -15,10 +15,10 @@ INSERT INTO hall VALUES (default, 'Party Bar', 'опис Party Bar');
 -- id, type_id, name, description, weight, price, photo
 INSERT INTO good VALUES (default, 1, 'Грецький салат', 'опис грецького салату', 250, 90, '/salats/greek_salat.png');
 INSERT INTO good VALUES (default, 1, 'Італійський салат', 'опис італійського салату', 180, 120, '/salats/italian_salat.png');
-INSERT INTO good VALUES (default, 1, 'Бургер з курячок грудкою', 'опис курячого бургеру', 360, 180, '/burgers/chicken_burger.png');
-INSERT INTO good VALUES (default, 1, 'Бургер з рибою', 'опис рибного бургеру', 340, 190, '/burgers/fish_burger.png');
-INSERT INTO good VALUES (default, 1, 'Фраголіно Majestico', 'опис фраголіно', 150, 70, '/alcohol/majestico.png');
-INSERT INTO good VALUES (default, 1, 'Шот', 'опис шоту', 100, 90, '/alcohol/shot.png');
+INSERT INTO good VALUES (default, 2, 'Бургер з курячок грудкою', 'опис курячого бургеру', 360, 180, '/burgers/chicken_burger.png');
+INSERT INTO good VALUES (default, 2, 'Бургер з рибою', 'опис рибного бургеру', 340, 190, '/burgers/fish_burger.png');
+INSERT INTO good VALUES (default, 3, 'Фраголіно Majestico', 'опис фраголіно', 150, 70, '/alcohol/majestico.png');
+INSERT INTO good VALUES (default, 3, 'Шот', 'опис шоту', 100, 90, '/alcohol/shot.png');
 
 -- id, client_id, hall_id
 INSERT INTO order_ VALUES (default, 1, 1);
@@ -29,7 +29,6 @@ INSERT INTO good_hall VALUES (default, 1, 1);
 INSERT INTO good_hall VALUES (default, 2, 1);
 INSERT INTO good_hall VALUES (default, 3, 1);
 INSERT INTO good_hall VALUES (default, 4, 1);
-INSERT INTO good_hall VALUES (default, 5, 1);
 INSERT INTO good_hall VALUES (default, 1, 2);
 INSERT INTO good_hall VALUES (default, 2, 2);
 INSERT INTO good_hall VALUES (default, 3, 2);
