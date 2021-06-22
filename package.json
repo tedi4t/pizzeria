@@ -23,5 +23,12 @@
   "bugs": {
     "url": "https://github.com/tedi4t/pizzeria/issues"
   },
-  "homepage": "https://github.com/tedi4t/pizzeria#readme"
+  "homepage": "https://github.com/tedi4t/pizzeria#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "eslint": "^7.29.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "pg": "^8.6.0"
+  }
 }
