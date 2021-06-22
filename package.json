@@ -1,0 +1,27 @@
+{
+  "name": "pizzeria",
+  "version": "1.0.0",
+  "description": "front-end and back-end for pizzeria",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tedi4t/pizzeria.git"
+  },
+  "keywords": [
+    "front-end",
+    "back-end",
+    "express",
+    "api",
+    "website",
+    "nodejs"
+  ],
+  "author": "Uryn Dmytro (tedi4t)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tedi4t/pizzeria/issues"
+  },
+  "homepage": "https://github.com/tedi4t/pizzeria#readme"
+}

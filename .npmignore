@@ -1,9 +1,3 @@
 node_modules
-
-logs
 *.log
-
-.env
-.env.test
-
 .DS_Store
