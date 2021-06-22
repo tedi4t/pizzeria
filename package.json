@@ -2,8 +2,9 @@
   "name": "pizzeria",
   "version": "1.0.0",
   "description": "front-end and back-end for pizzeria",
-  "main": "index.js",
+  "main": "./backend/src/index.js",
   "scripts": {
+    "server": "node ./backend/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
