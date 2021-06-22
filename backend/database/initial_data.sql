@@ -42,9 +42,9 @@ INSERT INTO order_element VALUES (default, 1, 1, 1);
 INSERT INTO order_element VALUES (default, 1, 3, 2);
 INSERT INTO order_element VALUES (default, 1, 6, 3);
 INSERT INTO order_element VALUES (default, 2, 4, 2);
-INSERT INTO order_element VALUES (default, 1, 5, 2);
+INSERT INTO order_element VALUES (default, 2, 5, 2);
 
 -- id, good_id, price
-INSERT INTO sale VALUES (default, 1, 210);
-INSERT INTO sale VALUES (default, 3, 300);
-INSERT INTO sale VALUES (default, 5, 120);
+INSERT INTO sale VALUES (default, 1, 60);
+INSERT INTO sale VALUES (default, 3, 120);
+INSERT INTO sale VALUES (default, 5, 50);
