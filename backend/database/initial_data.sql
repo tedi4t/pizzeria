@@ -11,6 +11,7 @@ INSERT INTO good_type VALUES (default, 'алкоголь');
 -- id, name, description
 INSERT INTO hall VALUES (default, 'Sky Garden', 'опис Sky Garden');
 INSERT INTO hall VALUES (default, 'Party Bar', 'опис Party Bar');
+INSERT INTO hall VALUES (default, 'Караоке', 'опис караоке');
 
 -- id, type_id, name, description, weight, price, photo
 INSERT INTO good VALUES (default, 1, 'Грецький салат', 'опис грецького салату', 250, 90, '/salats/greek_salat.png');

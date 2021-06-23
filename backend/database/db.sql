@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS client (
   phone varchar(255) NOT NULL,
   address text DEFAULT NULL,
   PRIMARY KEY (id),
-  UNIQUE(name, surname),
   UNIQUE(phone)
 );
 
@@ -41,7 +40,7 @@ CREATE TABLE IF NOT EXISTS good (
 CREATE TABLE IF NOT EXISTS order_ (
   id serial NOT NULL,
   client_id integer NOT NULL,
-  hall_id integer NOT NULL,
+  hall_id integer DEFAULT NULL,
   PRIMARY KEY (id),
   CONSTRAINT order_hall_id_hall_id_foreign FOREIGN KEY (hall_id) REFERENCES hall (id),
   CONSTRAINT order_client_id_client_id_foreign FOREIGN KEY (client_id) REFERENCES client (id)
