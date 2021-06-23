@@ -1,0 +1,4 @@
+{
+  "Order.create": "INSERT INTO order_ VALUES (default, $1, $2) RETURNING id;",
+  "Order.addElement": "INSERT INTO order_element VALUES (default, $1, $2, $3);"
+}
