@@ -4,9 +4,11 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db/database');
 const queries = require('../db/queries.json');
+const clientModules = require('../modules/client.js');
 
 router.post('/create', async (req, res) => {
-  const { clientID, hallID, order } = req.body;
+  const { client, hallID, order } = req.body;
+  const clientID = await clientModules.getClientID(client);
   const queryOrder = queries['Order.create'];
   const paramsOrder = [parseInt(clientID), parseInt(hallID)];
   const orderID = (await pool.query(queryOrder, paramsOrder)).rows[0].id;
@@ -21,8 +23,8 @@ router.post('/create', async (req, res) => {
   }
 
   Promise.all(addedPromises)
-    .then(res => res.status(200).json(true))
-    .catch(res => res.status(500).json(false))
+    .then(data => res.status(200).json(true))
+    .catch(err => res.status(500).json(false))
 });
 
 module.exports = router;

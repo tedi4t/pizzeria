@@ -1,4 +1,7 @@
 {
   "Order.create": "INSERT INTO order_ VALUES (default, $1, $2) RETURNING id;",
-  "Order.addElement": "INSERT INTO order_element VALUES (default, $1, $2, $3);"
+  "Order.addElement": "INSERT INTO order_element VALUES (default, $1, $2, $3);",
+  "Client.find": "SELECT * FROM client WHERE phone=$1",
+  "Client.add": "INSERT INTO client VALUES (default, $1, $2, $3, $4) RETURNING id;",
+  "Client.update": "UPDATE client SET address = $2 WHERE id = $1;"
 }
