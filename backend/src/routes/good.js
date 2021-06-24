@@ -13,6 +13,14 @@ router.post('/add', async (req, res) => {
   res.status(200).json(added);
 });
 
+router.get('/hall/:hall_id', async (req, res) => {
+  const { hall_id } = req.params;
+  const queryAll = queries['Good.hallGoods'];
+  const paramsAll = [hall_id];
+  const got = (await pool.query(queryAll, paramsAll)).rows;
+  res.status(200).json(JSON.stringify(got));
+})
+
 router.get('/all', async (req, res) => {
   const queryAll = queries['Good.all'];
   const paramsAll = [];
