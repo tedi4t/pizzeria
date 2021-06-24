@@ -15,6 +15,9 @@ app.use(cors({ origin: '*' }));
 const orderRouter = require('./routes/order.js');
 app.use('/order', orderRouter);
 
+const goodRouter = require('./routes/good.js');
+app.use('/good', goodRouter);
+
 app.get('/', (req, res) => {
   res.json('Seccessfully connected to voting system');
 });

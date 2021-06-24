@@ -9,8 +9,15 @@ router.post('/add', async (req, res) => {
   const { typeID, name, description, weight, price, photo } = req.body;
   const queryAdd = queries['Good.create'];
   const paramsAdd = [typeID, name, description, weight, price, photo];
-  const added = (await pool.query(queryAdd, paramsAdd)).rows[0].id;
+  const added = (await pool.query(queryAdd, paramsAdd)).rows;
   res.status(200).json(added);
 });
+
+router.get('/all', async (req, res) => {
+  const queryAll = queries['Good.all'];
+  const paramsAll = [];
+  const got = (await pool.query(queryAll, paramsAll)).rows;
+  res.status(200).json(JSON.stringify(got));
+})
 
 module.exports = router;
