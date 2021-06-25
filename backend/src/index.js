@@ -4,6 +4,16 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors')
 const PORT = process.env.PORT || 5000;
+const routers = [
+  {
+    route: '/order',
+    filename: 'order.js',
+  },
+  {
+    route: '/good',
+    filename: 'good.js',
+  },
+];
 
 const app = express();
 
@@ -12,11 +22,10 @@ app.use(express.json({ limit: '50mb' }));
 app.use(helmet());
 app.use(cors({ origin: '*' }));
 
-const orderRouter = require('./routes/order.js');
-app.use('/order', orderRouter);
-
-const goodRouter = require('./routes/good.js');
-app.use('/good', goodRouter);
+routers.forEach(routerObj => {
+  const router = require(`./routes/${routerObj.filename}`);
+  app.use(routerObj.route, router);
+})
 
 app.get('/', (req, res) => {
   res.json('Seccessfully connected to voting system');
