@@ -23,8 +23,23 @@ router.post('/create', async (req, res) => {
   }
 
   Promise.all(addedPromises)
-    .then(data => res.status(200).json(true))
-    .catch(err => res.status(500).json(false))
+    .then(data => res.status(200).json(data))
+    .catch(err => res.status(500).json(err))
 });
+
+router.get('/all', (req, res) => {
+  const queryAll = queries['Good.all'];
+  const paramsAll = [];
+  const got = (await pool.query(queryAll, paramsAll)).rows;
+  res.status(200).json(JSON.stringify(got));
+})
+
+router.get('/hall/:hall_id', (req, res) => {
+  const { hall_id } = req.params;
+  const queryAll = queries['Order.hallOrders'];
+  const paramsAll = [hall_id];
+  const got = (await pool.query(queryAll, paramsAll)).rows;
+  res.status(200).json(JSON.stringify(got));
+})
 
 module.exports = router;

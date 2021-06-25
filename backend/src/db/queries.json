@@ -1,6 +1,8 @@
 {
   "Order.create": "INSERT INTO order_ VALUES (default, $1, $2) RETURNING id;",
   "Order.addElement": "INSERT INTO order_element VALUES (default, $1, $2, $3);",
+  "Order.all": "SELECT client_id, order_id, good_id, quantity, type_id, good.name, description, weight, price, photo FROM client INNER JOIN order_ ON client.id=order_.client_id INNER JOIN order_element ON order_element.order_id=order_.id INNER JOIN good ON good.id=order_element.good_id;",
+  "Order.hallOrders": "SELECT client_id, order_id, good_id, quantity, type_id, good.name, description, weight, price, photo, hall_id FROM client INNER JOIN order_ ON client.id=order_.client_id INNER JOIN order_element ON order_element.order_id=order_.id INNER JOIN good ON good.id=order_element.good_id WHERE hall_id=$1;",
   "Client.find": "SELECT * FROM client WHERE phone=$1",
   "Client.add": "INSERT INTO client VALUES (default, $1, $2, $3, $4) RETURNING id;",
   "Client.update": "UPDATE client SET address = $2 WHERE id = $1;",
