@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+import Routes from './modules/routes.js'
 
 function App() {
   return (
-    <div>Some test text here</div>
+    <Router>
+      {/* <TopBar /> */}
+      <Routes />
+    </Router>
   );
 }
 
