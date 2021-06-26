@@ -1,19 +1,19 @@
 import React from 'react';
 
 export default () => (
-  <header class="header">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="header_content d-flex flex-row align-items-center justify-content-start">
-						<div class="logo">
+  <header className="header">
+		<div className="container">
+			<div className="row">
+				<div className="col">
+					<div className="header_content d-flex flex-row align-items-center justify-content-start">
+						<div className="logo">
 							<a href="#">
 								<div>The Venue</div>
 								<div>restaurant</div>
 							</a>
 						</div>
-						<nav class="main_nav">
-							<ul class="d-flex flex-row align-items-center justify-content-start">
+						<nav className="main_nav">
+							<ul className="d-flex flex-row align-items-center justify-content-start">
 								<li><a href="index.html">home</a></li>
 								<li><a href="about.html">about us</a></li>
 								<li><a href="menu.html">menu</a></li>
@@ -22,7 +22,7 @@ export default () => (
 								<li><a href="contact.html">contact</a></li>
 							</ul>
 						</nav>
-						<div class="reservations_phone ml-auto">Reservations: +34 586 778 8892</div>
+						<div className="reservations_phone ml-auto">Reservations: +34 586 778 8892</div>
 					</div>
 				</div>
 			</div>
