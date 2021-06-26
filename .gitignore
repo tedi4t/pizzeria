@@ -7,3 +7,5 @@ logs
 .env.test
 
 .DS_Store
+
+front/public/bundle.js

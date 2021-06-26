@@ -5,7 +5,9 @@
   "main": "./backend/src/index.js",
   "scripts": {
     "server": "node ./backend/src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . && prettier -c \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/*.yml\"",
+    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/*.yml\"",
+    "watch": "webpack --mode development --watch"
   },
   "repository": {
     "type": "git",
