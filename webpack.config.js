@@ -1,22 +1,7 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-const mode = 'development';
-
-const cssLoaders = (extra = []) => ([
-  {
-    loader: MiniCssExtractPlugin.loader,
-    options: {
-      hmr: mode,
-      reloadAll: true,
-    },
-  },
-  'css-loader',
-  ...extra,
-])
 
 module.exports = {
-  mode,
+  mode: 'development',
   context: path.resolve(__dirname, 'front'),
   entry: './src/index.js',
   output: {
@@ -35,15 +20,11 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: cssLoaders(),
+        use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.less$/,
-        use: cssLoaders(['less-loader']),
-      },
-      {
-        test: /\.s[ac]ss$/,
-        use: cssLoaders(['sass-loader']),
+        test: /\.(ttf|otf)$/,
+        use: ['file-loader']
       },
     ]
 }
