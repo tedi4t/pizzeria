@@ -18,10 +18,10 @@ const cssLoaders = (extra = []) => ([
 module.exports = {
   mode,
   context: path.resolve(__dirname, 'front'),
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './public'),
+    path: path.resolve(__dirname, 'front/public'),
   },
   module:{
     rules:[
