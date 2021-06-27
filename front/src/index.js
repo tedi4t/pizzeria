@@ -10,7 +10,7 @@ import TopBar from './modules/components/topBar.js';
 function App() {
   return (
     <Router>
-      {/* <TopBar /> */}
+      <TopBar />
       <Routes />
     </Router>
   );

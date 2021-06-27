@@ -1,0 +1,49 @@
+.navbar {
+  margin-top: 40px;
+
+  .nav-brand {
+
+
+    h2 {
+      font-size: 36px;
+      line-height: 0.75;
+      color: #FFFFFF;
+    }
+  
+    h3 {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      letter-spacing: 0.680em;
+      line-height: 0.75;
+      margin-top: 12px;
+      text-align: center;
+    }
+  }
+  
+  .navbar-link {
+    font-size: 16px!important;
+    font-weight: 700!important;
+    color: #FFFFFF!important;
+    text-transform: uppercase!important;
+    transition-duration: .2s;
+    margin-left: 17px;
+    margin-right: 17px;
+  }
+  
+  .navbar-link:hover {
+    color: #b49383!important;
+  }
+
+  .reservations {
+    height: 47px;
+    line-height: 43px;
+    padding-left: 25px;
+    padding-right: 20px;
+    text-align: center;
+    border: solid 2px #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+  }
+}
