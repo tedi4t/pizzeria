@@ -1,0 +1,49 @@
+section#homepage {
+  .carousel {
+
+    ol.carousel-indicators {
+      display: none;
+    }
+
+    .carousel-item {
+      height: 100vh;
+      position: relative;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .carousel-caption {
+        top: 50%;
+        bottom: 0;
+        transform: translateY(-10%);
+        
+        h2 {
+          display: block;
+          font-size: 60px;
+          font-weight: bold;
+          line-height: 0.75;
+          font-family: 'Edward', sans-serif;
+          color: #b49383;
+        }
+
+        h3 {
+          display: block;
+          font-size: 72px;
+          color: #FFFFFF;
+          font-family: 'PT Sans Narrow', sans-serif;
+          line-height: 1.2;
+        }
+
+        p {
+          display: block;
+          font-family: 'PT Sans Narrow', sans-serif;
+          font-size: 16px;
+          line-height: 1.875;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
