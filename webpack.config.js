@@ -8,6 +8,13 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'front/public'),
   },
+  devServer: {
+    contentBase: path.join(__dirname, './front/public'),
+    compress: true,
+    port: 9000,
+    historyApiFallback: true,
+    hot: true,
+  },
   module:{
     rules:[
       {
