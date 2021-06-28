@@ -37,9 +37,9 @@ export default () => {
         <Navbar.Collapse id="basic-navbar-nav" style={{ display: basicNavbarNavDisplay }}>
           <div className="close-btn d-block d-lg-none" onClick={handleCloseClick}>X</div>
           <Nav className="ml-auto mr-auto">
-            <Nav.Link href="#home" className="navbar-link">home</Nav.Link>
+            <Nav.Link href="/" className="navbar-link">home</Nav.Link>
             <Nav.Link href="#link" className="navbar-link">about us</Nav.Link>
-            <Nav.Link href="#link" className="navbar-link">menu</Nav.Link>
+            <Nav.Link href="/menu" className="navbar-link">menu</Nav.Link>
             <Nav.Link href="#link" className="navbar-link">delivery</Nav.Link>
             <Nav.Link href="#link" className="navbar-link">contact</Nav.Link>
           </Nav>
