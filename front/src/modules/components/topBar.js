@@ -1,21 +1,29 @@
-import React, { Fragment } from 'react';
-import { Navbar, Nav, Form, FormControl, Button, Container } from 'react-bootstrap';
+import React from 'react';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 export default () => {
+  const { innerWidth: width } = window;
+  const lgBreakpoint = 992;
+  const basicNavbarNavDisplay = width < lgBreakpoint ? 'none' : 'block';
+
+  let basicNavbarNav;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    basicNavbarNav = document.getElementById('basic-navbar-nav');
+    basicNavbarNav.classList.remove('show');
+    basicNavbarNav.style.display = 'block';
+  });
 
   const handleToggleClick = e => {
-    const basicNavbarNav = document.getElementById('basic-navbar-nav');
     basicNavbarNav.classList.add('show');
   }
 
   const handleCloseClick = e => {
-    const basicNavbarNav = document.getElementById('basic-navbar-nav');
     basicNavbarNav.classList.remove('show');
-    // basicNavbarNav.classList.remove('show');
   }
 
   return (
-    <Navbar expand="lg" fixed="top" expanded="true">
+    <Navbar expand="lg" fixed="top" expanded>
       <Container>
         <Navbar.Brand href="#home" className="nav-brand">
           <h2>
@@ -26,7 +34,7 @@ export default () => {
           </h3>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" id="basic-navbar-button" onClick={handleToggleClick}/>
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" style={{ display: basicNavbarNavDisplay }}>
           <div className="close-btn d-block d-lg-none" onClick={handleCloseClick}>X</div>
           <Nav className="ml-auto mr-auto">
             <Nav.Link href="#home" className="navbar-link">home</Nav.Link>
