@@ -2,7 +2,15 @@
   margin-top: 40px;
 
   .nav-brand {
-
+    @media screen and (max-width: 992px) {
+      // display: block;
+      // margin-left: auto;
+      // margin-right: auto;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
 
     h2 {
       font-size: 36px;
@@ -45,5 +53,81 @@
     font-size: 16px;
     font-weight: 700;
     color: #FFFFFF;
+    display: none;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+
+    .navbar-toggler-icon, .navbar-toggler-icon::before, .navbar-toggler-icon::after {
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: #fff;
+    }
+
+    .navbar-toggler-icon {
+      background-image: none!important;
+      position: relative;
+    }
+
+    .navbar-toggler-icon:before {
+      position: absolute;
+      top: -10px;
+      left: 0;
+    }
+
+    .navbar-toggler-icon::after {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(180,147,131,0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+
+    .close-btn {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 24px;
+      text-transform: uppercase;
+      position: absolute;
+      top: 60px;
+      right: 60px;
+    }
+
+    .navbar-nav {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      a {
+        font-size: 24px!important;
+        text-transform: uppercase!important;
+        font-weight: bold!important;
+        letter-spacing: 0.075em!important;
+        text-align: center!important;
+      }
+    }
+  }
+
+  .collapse:not(.show) {
+    display: block;
+  }
+
+  .navbar-collapse.show {
+    opacity: 1;
+    visibility: visible;
   }
 }
