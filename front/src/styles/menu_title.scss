@@ -1,0 +1,31 @@
+section#menu-title {
+  width: 100%;
+  height: 520px;
+  background: url('../images/menu.jpg');
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .title {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    h2 {
+      font-size: 48px;
+      font-weight: bold;
+      line-height: 0.75;
+      font-family: 'Edward', sans-serif;
+      color: #b49383;
+    }
+
+    h3 {
+      font-size: 72px;
+      color: #FFFFFF;
+      font-family: 'PT Sans Narrow', sans-serif;
+      line-height: 1.2;
+    }
+  }
+}
