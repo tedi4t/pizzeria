@@ -8,4 +8,5 @@ logs
 
 .DS_Store
 
-front/public/bundle.js
+front/public/
+!front/public/index.html
