@@ -13,6 +13,10 @@ const routers = [
     route: '/good',
     filename: 'good.js',
   },
+  {
+    route: '/hall',
+    filename: 'hall.js',
+  },
 ];
 
 const app = express();
