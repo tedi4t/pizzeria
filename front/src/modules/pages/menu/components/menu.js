@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Halls from './halls.js';
 import GoodTypes from './goodTypes.js';
 import Goods from './goods.js';
 
-export default ({ location, match }) => {
-  console.log({ location, match });
+export default () => {
+  const [hallID, setHallID] = useState(1);
+  const [typeID, setTypeID] = useState(1);
 
   return (
     <section id="menu">
       <Container>
         <div className="row">
-          <div className="col-lg-3">
-            <Halls />
+          <div className="col-lg-2">
+            <Halls hallID={hallID} setHallID={setHallID}/>
           </div>
-          <div className="col-lg-3">
-            <GoodTypes />
+          <div className="col-lg-2">
+            <GoodTypes typeID={typeID} setTypeID={setTypeID}/>
           </div>
-          <div className="col-lg-3">
-            <Goods />
+          <div className="col-lg-8">
+            <Goods hallID={hallID} typeID={typeID} />
           </div>
         </div>
       </Container>

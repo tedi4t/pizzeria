@@ -1,0 +1,60 @@
+#goods {
+  
+
+  .good {
+    position: relative;
+    margin-bottom: 30px;
+
+    .good-img {
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .good-info {
+      margin-top: 20px;
+
+      .good-name, .good-price h2 {
+        font-size: 18px;
+        color: #232323;
+        margin-bottom: 2px;
+      }
+  
+      .good-price {
+        display: flex;
+        justify-content: flex-end;
+      }
+  
+      .good-description {
+        font-size: 14px;
+        color: #636363;
+      }
+  
+      .justify-center {
+        display: flex;
+        justify-content: center;
+
+        .good-btn {
+          width: 150px;
+          height: 45px;
+          background: transparent;
+          border: solid 2px #c4ab9f;
+          text-align: center;
+          margin-top: 23px;
+          font-size: 18px;
+          color: #b49383;
+          transition-duration: .3s;
+          font-size: 18px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    
+        .good-btn:hover {
+          background: #c4ab9f;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

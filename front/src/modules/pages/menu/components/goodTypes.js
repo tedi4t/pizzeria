@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch.js';
 
-const TypeElement = ({ type, activeID }) => {
-  console.log(type);
+const TypeElement = ({ type, activeID, setTypeID }) => {
   const classList = `good-types-element ${type.id === activeID ? 'active' : ''}`;
   return (
-    <h1 className={classList}>
+    <h1 className={classList} onClick={handleTypeClick(type.id, setTypeID)}>
       {type.name}
     </h1>
   )
 }
 
-export default () => {
+const handleTypeClick = (id, setTypeID) => e => {
+  setTypeID(id);
+}
+
+export default ({ typeID, setTypeID }) => {
   const [{ response, isLoading, error }, doFetch] = useFetch('/good/type/all');
-  const [activeType, setActiveType] = useState(2);
 
   useEffect(() => {
     doFetch()
@@ -25,7 +27,7 @@ export default () => {
       <div className="good-types-elements">
         {
           response && response.map((type, id) => (
-            <TypeElement key = {id} type = {type} activeID = {activeType} />
+            <TypeElement key = {id} type = {type} activeID = {typeID} setTypeID={setTypeID}/>
           ))
         }
       </div>
