@@ -1,0 +1,55 @@
+#good-types {
+  padding-top: 26px;
+  padding-bottom: 40px;
+
+  .menu-title {
+    margin-top: 6px;
+    font-size: 36px;
+    color: #282828;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+    line-height: 1.2;
+  }
+
+  .good-types-elements {
+    padding-top: 69px;
+    padding-bottom: 50px;
+
+    .good-types-element {
+      font-family: 'PT Sans Narrow', sans-serif;
+      font-size: 20px;
+      line-height: 1.875;
+      font-weight: 400;
+      color: #636363;
+      text-transform: capitalize;
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+    }
+
+    .good-types-element::before, .good-types-element::after {
+      content: "";
+      border-bottom: 1px solid #b49383;
+      margin: auto;
+      transition-duration: .3s;
+      transition-timing-function: ease-in-out;
+    }
+
+    .good-types-element.active::before, .good-types-element.active::after {
+      flex: 1 1;
+    }
+
+    .good-types-element:hover:before, .good-types-element:hover::after {
+      flex: 1 1;
+    }
+
+    .good-types-element::before {
+      margin-right: 10px;
+    }
+
+    .good-types-element::after {
+      margin-left: 10px;
+    }
+  }
+}

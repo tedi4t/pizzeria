@@ -7,3 +7,4 @@ import './navbar.scss';
 import './menu_title.scss';
 import './menu_heading.scss';
 import './menu_halls.scss';
+import './menu_good_type.scss';
