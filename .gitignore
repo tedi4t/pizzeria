@@ -7,3 +7,6 @@ logs
 .env.test
 
 .DS_Store
+
+front/public/
+!front/public/index.html
