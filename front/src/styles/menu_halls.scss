@@ -1,0 +1,64 @@
+#halls {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .hall-title {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 0.75;
+    font-family: 'Edward', sans-serif;
+    color: #b49383;
+    text-align: center;
+  }
+
+  .hall-subtitle {
+    margin-top: 6px;
+    font-size: 18px;
+    color: #282828;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'PT Sans Narrow', sans-serif;
+    line-height: 1.2;
+  }
+
+  .hall-elements {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .hall-element {
+      font-family: 'PT Sans Narrow', sans-serif;
+      font-size: 20px;
+      line-height: 1.875;
+      font-weight: 400;
+      color: #636363;
+      text-transform: capitalize;
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+    }
+
+    .hall-element::before, .hall-element::after {
+      content: "";
+      border-bottom: 1px solid #b49383;
+      margin: auto;
+      transition-duration: .3s;
+      transition-timing-function: ease-in-out;
+    }
+
+    .hall-element.active::before, .hall-element.active::after {
+      flex: 1 1;
+    }
+
+    .hall-element:hover:before, .hall-element:hover::after {
+      flex: 1 1;
+    }
+
+    .hall-element::before {
+      margin-right: 10px;
+    }
+
+    .hall-element::after {
+      margin-left: 10px;
+    }
+  }
+}
