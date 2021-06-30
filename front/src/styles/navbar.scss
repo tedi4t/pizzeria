@@ -1,5 +1,6 @@
 .navbar {
-  margin-top: 40px;
+  padding-top: 40px;
+  transition-duration: .4s;
 
   .nav-brand {
     @media screen and (max-width: 992px) {
@@ -138,3 +139,10 @@
     visibility: visible;
   }
 }
+
+.navbar.scrolled {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background: rgba(0,0,0,0.85);
+  margin-top: 0;
+} 

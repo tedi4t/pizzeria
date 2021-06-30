@@ -1,18 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 export default () => {
   const { innerWidth: width } = window;
   const lgBreakpoint = 992;
   const basicNavbarNavDisplay = width < lgBreakpoint ? 'none' : 'block';
+  const scrollBreakpoint = 100;
+  const [scrollTop, setScrollTop] = useState(0);
 
   let basicNavbarNav;
-
-  document.addEventListener('DOMContentLoaded', () => {
-    basicNavbarNav = document.getElementById('basic-navbar-nav');
-    basicNavbarNav.classList.remove('show');
-    basicNavbarNav.style.display = 'block';
-  });
+  // let navbar;
 
   const handleToggleClick = e => {
     basicNavbarNav.classList.add('show');
@@ -22,8 +19,31 @@ export default () => {
     basicNavbarNav.classList.remove('show');
   }
 
+  const handleScroll = e => {
+    const pageYOffset = window.pageYOffset;
+    if (pageYOffset)  setScrollTop(window.pageYOffset);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    basicNavbarNav = document.getElementById('basic-navbar-nav');
+    basicNavbarNav.classList.remove('show');
+    basicNavbarNav.style.display = 'block';
+    window.addEventListener('scroll', handleScroll);
+  });
+
+  useEffect(() => {
+    const navbar = document.getElementById('navbar');
+    if (scrollTop > scrollBreakpoint) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }, [scrollTop]);
+
+  console.log(scrollTop);
+
   return (
-    <Navbar expand="lg" fixed="top" expanded>
+    <Navbar expand="lg" fixed="top" expanded id="navbar">
       <Container>
         <Navbar.Brand href="#home" className="nav-brand">
           <h2>
