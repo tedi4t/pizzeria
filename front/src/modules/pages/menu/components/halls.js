@@ -21,6 +21,14 @@ export default ({ hallID, setHallID }) => {
     doFetch()
   }, [])
 
+  const halls = [
+    { 
+      id: 0, 
+      name: 'Всі' 
+    },
+    ...(response || [])
+  ]
+
   return (
     <div id = "halls">
       <div className="hall-title">
@@ -31,7 +39,7 @@ export default ({ hallID, setHallID }) => {
       </div>
       <div className="hall-elements">
         {
-          response && response.map((hall, id) => (
+          halls && halls.map((hall, id) => (
             <HallElement 
               key = {id} 
               hall={hall} 

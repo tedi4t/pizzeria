@@ -5,8 +5,8 @@ import GoodTypes from './goodTypes.js';
 import Goods from './goods.js';
 
 export default () => {
-  const [hallID, setHallID] = useState(1);
-  const [typeID, setTypeID] = useState(1);
+  const [hallID, setHallID] = useState(0);
+  const [typeID, setTypeID] = useState(0);
 
   return (
     <section id="menu">

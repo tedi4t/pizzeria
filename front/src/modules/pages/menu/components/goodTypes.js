@@ -19,14 +19,22 @@ export default ({ typeID, setTypeID }) => {
 
   useEffect(() => {
     doFetch()
-  }, [])
+  }, []);
+
+  const types = [
+    { 
+      id: 0, 
+      name: 'Всі' 
+    },
+    ...(response || [])
+  ]
 
   return (
     <div id = "good-types">
       <div className="menu-title">Menu</div>
       <div className="good-types-elements">
         {
-          response && response.map((type, id) => (
+          types && types.map((type, id) => (
             <TypeElement key = {id} type = {type} activeID = {typeID} setTypeID={setTypeID}/>
           ))
         }

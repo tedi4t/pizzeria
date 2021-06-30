@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
 
-const GoodElement = () => {
-  // const imageSrc = require('./menu.jpg');
+const GoodElement = ({ good }) => {
   
   return (
     <div className="good col-lg-6">
@@ -13,19 +12,19 @@ const GoodElement = () => {
         <div className="row">
           <div className="col-10">
             <h2 className="good-name">
-              Pork Tenderloin marinated in Green Pepper
+              { good.name }
             </h2>
           </div>
           <div className="col-2">
             <div className="good-price ml-auto">
               <h2>
-                20$
+                { good.price }
               </h2>
             </div>
           </div>
         </div>
         <h3 className="good-description">
-          lorem ipsum dolor set emi.
+          { good.description }
         </h3>
         <div className="justify-center">
           <button className="good-btn">
@@ -38,21 +37,49 @@ const GoodElement = () => {
 }
 
 export default ({ hallID, typeID }) => {
-  const [{ response, isLoading, error }, doFetch] = useFetch(`/good/hall/${hallID}/type/${typeID}`);
+  const [url, setUrl] = useState('');
+  const queryCondition = [
+    {
+      condition: () => (hallID !== 0 && typeID !== 0),
+      url: `/good/hall/${hallID}/type/${typeID}`,
+    },
+    {
+      condition: () => (hallID === 0 && typeID !== 0),
+      url: `/good/type/${typeID}`,
+    },
+    {
+      condition: () => (hallID !== 0 && typeID === 0),
+      url: `/good/hall/${hallID}`,
+    },
+    {
+      condition: () => (hallID === 0 && typeID === 0),
+      url: `/good/all`,
+    },
+  ]
+
+  useEffect(() => {
+    for (const obj of queryCondition) {
+      if (obj.condition()) {
+        setUrl(obj.url);
+        break;
+      }
+    }
+  }, [hallID, typeID]);
+
+  const [{ response, isLoading, error }, doFetch] = useFetch(url);
 
   useEffect(() => {
     doFetch();
-  }, [])
-
-  console.log(response);
+  }, [url])
 
   return (
     <div id = "goods">
       <div className="row">
-        <GoodElement />
-        <GoodElement />
-        <GoodElement />
-        <GoodElement />
+        {
+          response && response.map((good, key) => (
+            <GoodElement good={good} key={key} />
+          ))
+        }
       </div>
     </div>
   )
