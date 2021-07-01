@@ -40,8 +40,6 @@ export default () => {
     }
   }, [scrollTop]);
 
-  console.log(scrollTop);
-
   return (
     <Navbar expand="lg" fixed="top" expanded id="navbar">
       <Container>

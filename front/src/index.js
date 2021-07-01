@@ -6,13 +6,16 @@ import {
 import './styles/styles.js';
 import Routes from './modules/routes.js'
 import TopBar from './modules/components/topBar.js';
+import { ShoppingCartProvider } from './modules/contexts/shoppingCart.js';
 
 function App() {
   return (
-    <Router>
-      <TopBar />
-      <Routes />
-    </Router>
+    <ShoppingCartProvider>
+      <Router>
+        <TopBar />
+        <Routes />
+      </Router>
+    </ShoppingCartProvider>
   );
 }
 

@@ -1,26 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
+import { shoppingCartContext } from '../../../contexts/shoppingCart';
 
 const GoodElement = ({ good }) => {
+  const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(false);
+  const [payload, setPayload] = useState(null)
 
   const handleOrderBtn = e => {
     setSelected(true);
+    const payload = {
+      id: good.id, 
+      name: good.name, 
+      price: good.price, 
+      quantity
+    }
+    dispatch({ type: 'addGood', payload})
   }
 
   const handleAddClick = e => {
     setQuantity(quantity + 1);
+    const payload = {
+      id: good.id, 
+      quantity: quantity + 1
+    }
+    dispatch({ type: 'updateQuantity', payload})
   }
 
   const handleRemoveClick = e => {
     if (quantity <= 1) {
       setSelected(false);
+      const payload = {
+        id: good.id,
+      }
+      dispatch({ type: 'removeGood', payload})
     } else {
       setQuantity(quantity - 1);
+      const payload = {
+        id: good.id, 
+        quantity: quantity - 1
+      }
+      dispatch({ type: 'updateQuantity', payload})
     }
   }
-  
+
   return (
     <div className="good col-lg-6">
       <div className="good-img">
