@@ -2,6 +2,24 @@ import React, { useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
 
 const GoodElement = ({ good }) => {
+  const [quantity, setQuantity] = useState(1);
+  const [selected, setSelected] = useState(false);
+
+  const handleOrderBtn = e => {
+    setSelected(true);
+  }
+
+  const handleAddClick = e => {
+    setQuantity(quantity + 1);
+  }
+
+  const handleRemoveClick = e => {
+    if (quantity <= 1) {
+      setSelected(false);
+    } else {
+      setQuantity(quantity - 1);
+    }
+  }
   
   return (
     <div className="good col-lg-6">
@@ -26,9 +44,18 @@ const GoodElement = ({ good }) => {
         <h3 className="good-description">
           { good.description }
         </h3>
-        <div className="justify-center">
+        <div className="justify-center" style={{ display: selected ? 'none' : 'flex' }} onClick={handleOrderBtn}>
           <button className="good-btn">
             Order Now
+          </button>
+        </div>
+        <div className="select-quantity-btns" style={{ display: selected ? 'flex' : 'none' }}>
+          <button className="remove-btn" onClick={handleRemoveClick}>
+            -
+          </button>
+          <span id="quantity">{ quantity }</span>
+          <button className="add-btn" onClick={handleAddClick}>
+            +
           </button>
         </div>
       </div>

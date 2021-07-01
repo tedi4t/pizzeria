@@ -46,12 +46,41 @@
           font-size: 18px;
           color: #b49383;
           transition-duration: .3s;
-          font-size: 18px;
           margin-left: auto;
           margin-right: auto;
         }
     
         .good-btn:hover {
+          background: #c4ab9f;
+          color: #fff;
+        }
+      }
+
+      .select-quantity-btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 31px;
+
+        #quantity {
+          font-family: 'PT Sans Narrow', sans-serif;
+          font-size: 24px;
+          margin-left: 18px;
+          margin-right: 18px;
+        }
+
+        .add-btn, .remove-btn {
+          height: 45px;
+          width: 45px;
+          background: transparent;
+          border: solid 2px #c4ab9f;
+          text-align: center;
+          font-size: 24px;
+          color: #b49383;
+          transition-duration: .3s;
+        }
+
+        .add-btn:hover, .remove-btn:hover {
           background: #c4ab9f;
           color: #fff;
         }
