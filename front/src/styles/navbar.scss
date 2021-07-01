@@ -55,6 +55,10 @@
     font-weight: 700;
     color: #FFFFFF;
     display: none;
+
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
   }
 
   .navbar-toggler {
@@ -137,6 +141,22 @@
   .navbar-collapse.show {
     opacity: 1;
     visibility: visible;
+  }
+
+  .shopping-cart {
+    display: flex;
+    align-items: center;
+
+    .shopping-cart_svg__shopping-cart-img {
+      height: 40px;
+      fill: white;
+    }
+
+    .shopping-cart-text {
+      margin-left: 20px;
+      color: #fff;
+      font-size: 24px!important;
+    }
   }
 }
 

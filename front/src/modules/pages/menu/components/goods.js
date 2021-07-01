@@ -6,7 +6,6 @@ const GoodElement = ({ good }) => {
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(false);
-  const [payload, setPayload] = useState(null)
 
   const handleOrderBtn = e => {
     setSelected(true);

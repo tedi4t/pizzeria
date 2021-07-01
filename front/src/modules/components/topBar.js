@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { shoppingCartContext } from '../contexts/shoppingCart';
+import ShoppingCartImg from '../../images/shopping-cart.svg';
 
 export default () => {
+  const [shoppingCartState] = useContext(shoppingCartContext);
   const { innerWidth: width } = window;
   const lgBreakpoint = 992;
   const basicNavbarNavDisplay = width < lgBreakpoint ? 'none' : 'block';
   const scrollBreakpoint = 100;
   const [scrollTop, setScrollTop] = useState(0);
+  const [price, setPrice] = useState(0);
 
   let basicNavbarNav;
-  // let navbar;
 
   const handleToggleClick = e => {
     basicNavbarNav.classList.add('show');
@@ -40,6 +43,12 @@ export default () => {
     }
   }, [scrollTop]);
 
+  useEffect(() => {
+    let priceCounting = shoppingCartState
+      .reduce((acc, element) => acc + element.price * element.quantity, 0);
+    setPrice(priceCounting);
+  }, [shoppingCartState]);
+
   return (
     <Navbar expand="lg" fixed="top" expanded id="navbar">
       <Container>
@@ -62,7 +71,19 @@ export default () => {
             <Nav.Link href="#link" className="navbar-link">contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <div className="reservations ml-auto d-none d-lg-block">Reservations: +34 586 778 8892</div>
+        <div 
+          className="reservations ml-auto"
+          style={{ display: (price === 0) ? 'block' : 'none' }}  
+        >
+          Reservations: +34 586 778 8892
+        </div>
+        <div 
+          className="shopping-cart"
+          style={{ display: (price > 0) ? 'flex' : 'none' }}  
+        >
+          <ShoppingCartImg />
+          <div className="shopping-cart-text">{ price } ₴</div>
+        </div>
       </Container>
     </Navbar>
   )
