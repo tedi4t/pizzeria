@@ -12,13 +12,16 @@ const reducer = (state, action) => {
 		},
 		updateQuantity: () => {
 			const { id, quantity } = action.payload;
+			const newState = [];
 			for (const element of state) {
 				if (element.id === id) {
-					element.quantity = quantity;
-					return state;
+					newState.push({ ...element, quantity });
+				} 
+				else {
+					newState.push({ ...element });
 				}
 			};
-			return this.addGood();
+			return newState;
 		},
 		removeGood: () => {
 			const newState = [];
