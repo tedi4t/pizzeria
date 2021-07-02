@@ -1,7 +1,10 @@
 const path = require('path');
+const webpack = require('webpack');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
   mode: 'development',
+  target: 'web',
   context: path.resolve(__dirname, 'front'),
   entry: './src/index.js',
   output: {
@@ -9,12 +12,23 @@ module.exports = {
     path: path.resolve(__dirname, 'front/public'),
   },
   devServer: {
-    contentBase: path.join(__dirname, './front/public'),
-    compress: true,
+    contentBase: path.join(__dirname, 'front/public'),
+    // compress: true,
     port: 9000,
-    historyApiFallback: true,
-    hot: true,
+    historyApiFallback: {
+      disableDotRule: true,
+      rewrites: [
+        { from: /^\/f\/\S*$/, to: '/published.html' },
+        { from: /^\/pf\/\S*$/, to: '/published.html' },
+      ]
+    },
+    hotOnly: true,
   },
+  devtool: 'source-map',
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin()
+  ],
   module:{
     rules:[
       {
@@ -22,7 +36,7 @@ module.exports = {
         exclude: /(node_modules)/,
         loader: "babel-loader",
         options:{
-          presets:["@babel/preset-env", "@babel/preset-react"]
+          presets:["@babel/preset-env", "@babel/preset-react"],
         }
       },
       {
@@ -41,10 +55,10 @@ module.exports = {
         test: /\.(png|jpg|gif)$/,
         use: ['file-loader']
       },
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      },
+      // {
+      //   test: /\.svg$/,
+      //   use: ['@svgr/webpack'],
+      // },
     ]
-}
+  }
 } 

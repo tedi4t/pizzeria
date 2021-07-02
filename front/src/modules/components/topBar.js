@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { shoppingCartContext } from '../contexts/shoppingCart';
-import ShoppingCartImg from '../../images/shopping-cart.svg';
+// import ShoppingCartImg from '../../images/shopping-cart.svg';
 
 export default () => {
   const [shoppingCartState] = useContext(shoppingCartContext);
@@ -49,6 +49,8 @@ export default () => {
     setPrice(priceCounting);
   }, [shoppingCartState]);
 
+  console.log(shoppingCartState);
+
   return (
     <Navbar expand="lg" fixed="top" expanded id="navbar">
       <Container>
@@ -81,7 +83,7 @@ export default () => {
           className="shopping-cart"
           style={{ display: (price > 0) ? 'flex' : 'none' }}  
         >
-          <ShoppingCartImg />
+          {/* <ShoppingCartImg /> */}
           <div className="shopping-cart-text">{ price } ₴</div>
         </div>
       </Container>
