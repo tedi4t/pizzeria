@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { shoppingCartContext } from '../contexts/shoppingCart';
-import ShoppingCartImg from '../../images/shopping-cart.svg';
 
 export default () => {
   const [shoppingCartState] = useContext(shoppingCartContext);
@@ -81,8 +80,7 @@ export default () => {
           className="shopping-cart"
           style={{ display: (price > 0) ? 'flex' : 'none' }}  
         >
-          <ShoppingCartImg />
-          <div className="shopping-cart-text">{ price } ₴</div>
+          <div className="shopping-cart-text">Корзина: { price } ₴</div>
         </div>
       </Container>
     </Navbar>

@@ -2,12 +2,14 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
+  target: 'web',
   context: path.resolve(__dirname, 'front'),
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'front/public'),
   },
+  devtool: 'source-map',
   devServer: {
     contentBase: path.join(__dirname, './front/public'),
     compress: true,
@@ -38,13 +40,9 @@ module.exports = {
         use: ['file-loader']
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|svg|gif)$/,
         use: ['file-loader']
       },
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      },
     ]
-}
+  }
 } 
