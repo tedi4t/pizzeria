@@ -4,6 +4,7 @@ import { shoppingCartContext } from '../../../contexts/shoppingCart.js';
 import ShoppingCartItem from "./shoppingCartItem.js";
 import Footer from "../../../components/footer.js";
 import TotalPrice from "./totalPrice.js";
+import { Redirect } from "react-router-dom";
 
 export default () => {
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
@@ -16,7 +17,11 @@ export default () => {
     setPrice(priceCounting);
   }, [shoppingCartState]);
 
-  console.log(price);
+  if (shoppingCartState.length === 0) {
+    return (
+      <Redirect to="/menu" />
+    )
+  }
 
   return (
     <Fragment>

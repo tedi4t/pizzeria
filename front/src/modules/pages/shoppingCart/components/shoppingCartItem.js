@@ -6,7 +6,6 @@ export default ({ good }) => {
   const shoppingCartImg = useRef(null);
   const [cookies, setCookie] = useCookies(['shoppingCart']);
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
-  const [totalPrice, setTotalPrice] = useState(0);
   const { name, price, quantity, description } = good;
   console.log(good);
 
