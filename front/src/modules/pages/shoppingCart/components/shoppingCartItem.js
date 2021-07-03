@@ -7,7 +7,6 @@ export default ({ good }) => {
   const [cookies, setCookie] = useCookies(['shoppingCart']);
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const { name, price, quantity, description } = good;
-  console.log(good);
 
   const handleAddClick = e => {
     const payload = {

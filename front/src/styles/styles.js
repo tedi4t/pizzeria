@@ -14,3 +14,4 @@ import './menu/good_type.scss';
 import './menu/good.scss';
 
 import './shoppingCart/item.scss';
+import './shoppingCart/orderForm.scss';
