@@ -23,7 +23,7 @@ router.post('/create', async (req, res) => {
   }
 
   Promise.all(addedPromises)
-    .then(data => res.status(200).json(data))
+    .then(data => res.status(200).json(JSON.stringify([])))
     .catch(err => res.status(500).json(err))
 });
 

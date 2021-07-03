@@ -25,15 +25,16 @@ const addClient = async client => {
 const getClientID = async client => {
   const { phone, address } = client;
   const foundClient = await findClient(phone);
-  console.log(foundClient);
-  const foundClientAddress = foundClient.address;
-  if (address !== foundClientAddress) {
-    await updateAddress(foundClient.id, address);
+  if (foundClient) {
+    const foundClientAddress = foundClient.address;
+    if (address !== foundClientAddress) {
+      await updateAddress(foundClient.id, address);
+    }
+    return foundClient.id;
   }
-  if (foundClient) return foundClient.id;
 
-  const added = addClient(client);
-  return added;
+  const added = await addClient(client);
+  return added.rows[0].id;
 }
 
 module.exports = {
