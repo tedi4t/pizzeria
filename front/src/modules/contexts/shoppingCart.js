@@ -32,7 +32,8 @@ const reducer = (state, action) => {
 				}
 			};
 			return newState;
-		}
+		},
+		clearState: () => ([]),
 	}
 	return actions[action.type]();
 }

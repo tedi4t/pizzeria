@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 export default () => {
   const [{ response, isLoading, error }, doFetch] = useFetch('/order/create');
   const [cookies, setCookie, removeCookie] = useCookies(['shoppingCart']);
-  const [shoppingCartState] = useContext(shoppingCartContext);
+  const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('')
   const [phone, setPhone] = useState('');
@@ -35,6 +35,7 @@ export default () => {
 
   if (response) {
     removeCookie('shoppingCart');
+    dispatch({ type: 'clearState' })
     return (
       <Redirect to="/" />
     )
