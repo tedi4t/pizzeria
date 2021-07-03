@@ -1,6 +1,6 @@
 #shopping-cart-items {
   padding-top: 100px;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
 
   h3.shopping-cart-items-title {
     font-family: 'PT Sans Narrow', sans-serif;
@@ -97,6 +97,34 @@
       font-size: 24px;
       text-transform: uppercase;
       display: inline-block;
+    }
+  }
+
+  .order-btn-block {
+    display: flex;
+    justify-content: center;
+
+    .order-btn {
+      margin-top: 50px;
+      width: 50%;
+      height: 55px;
+      background: transparent;
+      border: solid 2px #c4ab9f;
+      text-align: center;
+      font-size: 18px;
+      color: #b49383;
+      transition-duration: .3s;
+      text-decoration: none ;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+
+    .order-btn:hover {
+      background: #c4ab9f;
+      border: solid 2px #c4ab9f;
+      color: #fff;
     }
   }
 }

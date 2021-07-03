@@ -4,6 +4,7 @@ import { shoppingCartContext } from '../../../contexts/shoppingCart.js';
 import ShoppingCartItem from "./shoppingCartItem.js";
 import Footer from "../../../components/footer.js";
 import TotalPrice from "./totalPrice.js";
+import OrderCartItem from './orderCartItem.js';
 import { Redirect } from "react-router-dom";
 
 export default () => {
@@ -36,6 +37,7 @@ export default () => {
             ))
           }
           <TotalPrice price={price} />
+          <OrderCartItem />
         </Container>
       </div>
       <Footer />
