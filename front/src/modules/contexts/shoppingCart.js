@@ -1,14 +1,14 @@
 import React, { createContext, useReducer } from "react";
-
 const initialState = []; // array of objects like this { id, name, price, quantity }
 
 const reducer = (state, action) => {
 	const actions = {
 		addGood: () => {
-			return [
+      const result = [
 				...state,
-				action.payload,
-			]
+				...action.payload,
+			];
+      return result;
 		},
 		updateQuantity: () => {
 			const { id, quantity } = action.payload;

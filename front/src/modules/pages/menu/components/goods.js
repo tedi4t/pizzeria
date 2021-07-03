@@ -1,20 +1,22 @@
 import React, { useContext, useEffect, useState } from 'react';
 import useFetch from '../../../hooks/useFetch';
 import { shoppingCartContext } from '../../../contexts/shoppingCart';
+import { useCookies } from 'react-cookie';
 
 const GoodElement = ({ good }) => {
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(false);
+  const [cookies, setCookie] = useCookies(['shoppingCart']);
 
   const handleOrderBtn = e => {
     setSelected(true);
-    const payload = {
+    const payload = [{
       id: good.id, 
       name: good.name, 
       price: good.price, 
       quantity
-    }
+    }]
     dispatch({ type: 'addGood', payload})
   }
 
@@ -43,6 +45,10 @@ const GoodElement = ({ good }) => {
       dispatch({ type: 'updateQuantity', payload})
     }
   }
+
+  useEffect(() => {
+    setCookie('shoppingCart', JSON.stringify(shoppingCartState));
+  }, [shoppingCartState]);
 
   return (
     <div className="good col-lg-6">
