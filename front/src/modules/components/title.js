@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 
-export default () => {
+export default ({ text }) => {
   
 
   return (
@@ -12,7 +12,7 @@ export default () => {
             The Venue
           </h2>
           <h3>
-            The Menu
+            { text }
           </h3>
         </div>
       </Container>

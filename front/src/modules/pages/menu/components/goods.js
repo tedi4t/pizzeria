@@ -14,7 +14,9 @@ const GoodElement = ({ good }) => {
     const payload = [{
       id: good.id, 
       name: good.name, 
-      price: good.price, 
+      price: good.price,
+      photo: good.photo,
+      description: good.description,
       quantity
     }]
     dispatch({ type: 'addGood', payload})
