@@ -146,16 +146,19 @@
   .shopping-cart {
     display: flex;
     align-items: center;
-
-    .shopping-cart_svg__shopping-cart-img {
-      height: 40px;
-      fill: white;
-    }
+    text-decoration: none;
 
     .shopping-cart-text {
       margin-left: 20px;
       color: #fff;
       font-size: 24px!important;
+      transition-duration: .2s;
+    }
+  }
+
+  .shopping-cart:hover {
+    .shopping-cart-text {
+      color: #b49383!important;
     }
   }
 }

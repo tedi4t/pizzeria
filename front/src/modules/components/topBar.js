@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { shoppingCartContext } from '../contexts/shoppingCart';
 
@@ -76,12 +77,13 @@ export default () => {
         >
           Reservations: +34 586 778 8892
         </div>
-        <div 
+        <Link
+          to = "/shoppingCart"
           className="shopping-cart"
           style={{ display: (price > 0) ? 'flex' : 'none' }}  
         >
           <div className="shopping-cart-text">Корзина: { price } ₴</div>
-        </div>
+        </Link>
       </Container>
     </Navbar>
   )
