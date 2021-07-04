@@ -7,7 +7,6 @@ const GoodElement = ({ good }) => {
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(false);
-  const [cookies, setCookie] = useCookies(['shoppingCart']);
 
   const handleOrderBtn = e => {
     setSelected(true);
@@ -49,8 +48,13 @@ const GoodElement = ({ good }) => {
   }
 
   useEffect(() => {
-    setCookie('shoppingCart', JSON.stringify(shoppingCartState));
-  }, [shoppingCartState]);
+    for (const element of shoppingCartState) {
+      if (element.id === good.id) {
+        setSelected(true);
+        setQuantity(element.quantity);
+      }
+    }
+  }, [])
 
   return (
     <div className="good col-lg-6">
@@ -96,6 +100,9 @@ const GoodElement = ({ good }) => {
 
 export default ({ hallID, typeID }) => {
   const [url, setUrl] = useState('');
+  const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
+  const [cookies, setCookie] = useCookies(['shoppingCart']);
+
   const queryCondition = [
     {
       condition: () => (hallID !== 0 && typeID !== 0),
@@ -114,6 +121,10 @@ export default ({ hallID, typeID }) => {
       url: `/good/all`,
     },
   ]
+
+  useEffect(() => {
+    setCookie('shoppingCart', JSON.stringify(shoppingCartState));
+  }, [shoppingCartState]);
 
   useEffect(() => {
     for (const obj of queryCondition) {
