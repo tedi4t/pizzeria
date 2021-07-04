@@ -64,11 +64,11 @@ export default () => {
         <Navbar.Collapse id="basic-navbar-nav" style={{ display: basicNavbarNavDisplay }}>
           <div className="close-btn d-block d-lg-none" onClick={handleCloseClick}>X</div>
           <Nav className="ml-auto mr-auto">
-            <Nav.Link href="/" className="navbar-link">home</Nav.Link>
-            <Nav.Link href="#link" className="navbar-link">about us</Nav.Link>
-            <Nav.Link href="/menu" className="navbar-link">menu</Nav.Link>
-            <Nav.Link href="#link" className="navbar-link">delivery</Nav.Link>
-            <Nav.Link href="#link" className="navbar-link">contact</Nav.Link>
+            <Link to="/" className="navbar-link nav-link">home</Link>
+            <Link to="#link" className="navbar-link nav-link">about us</Link>
+            <Link to="/menu" className="navbar-link nav-link">menu</Link>
+            <Link to="#link" className="navbar-link nav-link">delivery</Link>
+            <Link to="#link" className="navbar-link nav-link">contact</Link>
           </Nav>
         </Navbar.Collapse>
         <div 
