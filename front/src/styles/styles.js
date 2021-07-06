@@ -13,5 +13,8 @@ import './menu/halls.scss';
 import './menu/good_type.scss';
 import './menu/good.scss';
 
+import './about/heading.scss';
+import './about/chefs.scss';
+
 import './shoppingCart/item.scss';
 import './shoppingCart/orderForm.scss';
