@@ -54,10 +54,8 @@ export default () => {
           {
             chefs.map((chef, id) => (
               <ChefElement 
-                key={id} 
-                name={chef.name} 
-                position={chef.position} 
-                imgSrc={chef.imgSrc}
+                key={id}
+                { ...chef }
               />
             ))
           }
