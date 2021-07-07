@@ -7,7 +7,7 @@ const { PG_USER, PG_PASSWORD, PG_HOST, PG_PORT,
 
 const devConfig = `postgresql://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/${PG_DATABASE}`
 const proConfig = DATABASE_URL;
-
+console.log(proConfig);
 const pool = new Pool({
   connectionString: NODE_ENV === 'production' ? devConfig : proConfig,
   ssl: {
