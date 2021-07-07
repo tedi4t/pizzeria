@@ -8,7 +8,7 @@ const devConfig = `postgresql://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PORT}/
 const proConfig = DATABASE_URL;
 
 const config = {
-  connectionString: NODE_ENV === 'production' ? devConfig : proConfig,
+  connectionString: NODE_ENV === 'production' ? proConfig : devConfig,
   ssl: {
     rejectUnauthorized: false
   }
