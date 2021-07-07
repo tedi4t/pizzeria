@@ -3,6 +3,8 @@
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors')
+const path = require('path');
+
 const PORT = process.env.PORT || 5000;
 const routers = [
   {
@@ -28,12 +30,25 @@ app.use(cors({ origin: '*' }));
 
 routers.forEach(routerObj => {
   const router = require(`./routes/${routerObj.filename}`);
-  app.use(routerObj.route, router);
+  app.use(`/api${routerObj.route}`, router);
 })
 
-app.get('/', (req, res) => {
-  res.json('Seccessfully connected to voting system');
+// to return react files
+const webpageRoutes = [
+  '/', 
+  '/about', 
+  '/menu', 
+  '/shoppingCart', 
+  '/shoppingCart/order'
+];
+app.use(express.static(path.join(__dirname, '../../front/public')));
+app.get(webpageRoutes, (req, res) => {
+  res.sendFile(path.join(__dirname, '../../front/public', 'index.html'));
 });
+
+//  app.get("/about", (req, res) => {
+//   res.sendFile(path.join(__dirname, '../../front/public', 'index.html'));
+//  });
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

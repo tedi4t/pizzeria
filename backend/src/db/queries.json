@@ -9,7 +9,8 @@
   "Good.create": "INSERT INTO good VALUES (default, $1, $2, $3, $4, $5, $6);",
   "Good.all": "SELECT * FROM good;",
   "Good.hallGoods": "SELECT * FROM good INNER JOIN good_hall on good.id=good_hall.good_id WHERE hall_id=$1;",
+  "Good.typeAll": "SELECT * FROM good_type;",
   "Good.typeGoods": "SELECT * FROM good INNER JOIN good_type ON good.type_id=good_type.id WHERE good.type_id=$1;",
-  "Good.typeHallGoods": "SELECT * FROM good INNER JOIN good_type ON good.type_id=good_type.id INNER JOIN good_hall ON good.id=good_hall.good_id WHERE good.type_id=$1 AND good_hall.hall_id=$2;",
+  "Good.typeHallGoods": "SELECT good.id, good.name, good.description, weight, price, photo FROM good INNER JOIN good_type ON good.type_id=good_type.id INNER JOIN good_hall ON good.id=good_hall.good_id WHERE good.type_id=$1 AND good_hall.hall_id=$2;",
   "Hall.all": "SELECT * FROM hall;"
 }

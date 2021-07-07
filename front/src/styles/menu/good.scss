@@ -1,0 +1,98 @@
+#goods {
+  
+
+  .good {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .good-img {
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .good-info {
+      margin-top: 20px;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+
+      .good-name, .good-price h2 {
+        font-size: 18px;
+        color: #232323;
+        margin-bottom: 2px;
+        text-transform: capitalize;
+      }
+  
+      .good-price {
+        display: flex;
+        justify-content: flex-end;
+      }
+  
+      .good-description {
+        font-size: 14px;
+        color: #636363;
+      }
+  
+      .btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        justify-self: flex-end;
+        flex: 1 1 auto;
+
+        .good-btn {
+          width: 150px;
+          height: 45px;
+          background: transparent;
+          border: solid 2px #c4ab9f;
+          text-align: center;
+          margin-top: 23px;
+          font-size: 18px;
+          color: #b49383;
+          transition-duration: .3s;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    
+        .good-btn:hover {
+          background: #c4ab9f;
+          color: #fff;
+        }
+      }
+
+      .select-quantity-btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 31px;
+
+        #quantity {
+          font-family: 'PT Sans Narrow', sans-serif;
+          font-size: 24px;
+          margin-left: 25px;
+          margin-right: 25px;
+        }
+
+        .add-btn, .remove-btn {
+          height: 45px;
+          width: 45px;
+          background: transparent;
+          border: solid 2px #c4ab9f;
+          text-align: center;
+          font-size: 24px;
+          color: #b49383;
+          transition-duration: .3s;
+        }
+
+        .add-btn:hover, .remove-btn:hover {
+          background: #c4ab9f;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

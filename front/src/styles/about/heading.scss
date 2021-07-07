@@ -1,0 +1,39 @@
+#about {
+  
+
+  .heading {
+    padding-top: 90px;
+    padding-bottom: 100px;
+
+    .title {
+      text-align: left;
+
+      h3 {
+        font-family: 'Edward', sans-serif;
+        color: #b49383;
+        line-height: 0.75;
+        font-size: 36px;
+      }
+
+      h4 {
+        font-size: 48px;
+        font-family: 'PT Sans Narrow', sans-serif;
+        line-height: 1.2;
+        color: #232323;
+
+      }
+    }
+
+    .text {
+      margin-top: 30px;
+
+      p {
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: 16px;
+        line-height: 1.875;
+        font-weight: 400;
+        color: #636363;
+      }
+    }
+  }
+}

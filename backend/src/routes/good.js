@@ -29,6 +29,13 @@ router.get('/hall/:hall_id', async (req, res) => {
   res.status(200).json(JSON.stringify(got));
 })
 
+router.get('/type/all', async (req, res) => {
+  const queryAll = queries['Good.typeAll'];
+  const paramsAll = [];
+  const got = (await pool.query(queryAll, paramsAll)).rows;
+  res.status(200).json(JSON.stringify(got));
+})
+
 router.get('/type/:type_id', async (req, res) => {
   const { type_id } = req.params;
   const queryAll = queries['Good.typeGoods'];

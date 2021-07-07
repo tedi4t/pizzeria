@@ -1,0 +1,29 @@
+section#menu-heading {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  h2 {
+    font-size: 36px;
+    font-family: 'Edward', sans-serif;
+    color: #b49383;
+    line-height: 0.75;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 48px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    line-height: 1.2;
+    color: #232323;
+    text-align: center;
+  }
+
+  .text {
+    margin-top: 24px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16px;
+    line-height: 1.875;
+    font-weight: 400;
+    color: #636363;
+  }
+}
