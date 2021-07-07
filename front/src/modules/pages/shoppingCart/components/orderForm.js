@@ -41,6 +41,13 @@ export default () => {
     )
   }
 
+  console.log(shoppingCartState);
+  if (shoppingCartState.length === 0) {
+    return (
+      <Redirect to="/menu" />
+    )
+  }
+
   return (
     <div id="order-form">
       <Container>

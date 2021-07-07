@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
 export default (url) => {
-  const baseUrl = 'http://localhost:5000'
+  const baseUrl = `${window.location.origin}/api`;
   const [response, setResponse] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);

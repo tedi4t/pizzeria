@@ -4,6 +4,7 @@
   "description": "front-end and back-end for pizzeria",
   "main": "./backend/src/index.js",
   "scripts": {
+    "start": "webpack --mode=production && node ./backend/src/index.js",
     "server": "node ./backend/src/index.js",
     "lint": "eslint . && prettier -c \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/*.yml\"",
     "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/*.yml\"",

@@ -52,14 +52,14 @@ export default () => {
   return (
     <Navbar expand="lg" fixed="top" expanded id="navbar">
       <Container>
-        <Navbar.Brand href="#home" className="nav-brand">
+        <Link to="/" className="nav-brand navbar-brand">
           <h2>
             The Venue
           </h2>
           <h3>
             Restaurant
           </h3>
-        </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" id="basic-navbar-button" onClick={handleToggleClick}/>
         <Navbar.Collapse id="basic-navbar-nav" style={{ display: basicNavbarNavDisplay }}>
           <div className="close-btn d-block d-lg-none" onClick={handleCloseClick}>X</div>

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { shoppingCartContext } from '../../../contexts/shoppingCart';
 
 export default ({ good }) => {
-  console.log(good);
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(false);
