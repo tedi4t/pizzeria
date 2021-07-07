@@ -14,6 +14,7 @@ const config = {
   }
 };
 
+console.log(NODE_ENV);
 console.log(config);
 
 const pool = new Pool(config);
