@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { shoppingCartContext } from '../../../contexts/shoppingCart';
 
 export default ({ good }) => {
+  console.log(good);
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const [quantity, setQuantity] = useState(1);
   const [selected, setSelected] = useState(false);
@@ -57,7 +58,7 @@ export default ({ good }) => {
   return (
     <div className="good col-lg-6">
       <div className="good-img">
-        <img src='./sig_1.jpg'/>
+        <img src={ good.photo }/>
       </div>
       <div className="good-info">
         <div className="row">
@@ -77,12 +78,12 @@ export default ({ good }) => {
         <h3 className="good-description">
           { good.description }
         </h3>
-        <div className="justify-center" style={{ display: selected ? 'none' : 'flex' }} onClick={handleOrderBtn}>
+        <div className="btn-wrapper" style={{ display: selected ? 'none' : 'flex' }} onClick={handleOrderBtn}>
           <button className="good-btn">
             Order Now
           </button>
         </div>
-        <div className="select-quantity-btns" style={{ display: selected ? 'flex' : 'none' }}>
+        <div className="select-quantity-btns btn-wrapper" style={{ display: selected ? 'flex' : 'none' }}>
           <button className="remove-btn" onClick={handleRemoveClick}>
             -
           </button>

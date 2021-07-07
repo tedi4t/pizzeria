@@ -34,10 +34,9 @@ export default ({ good }) => {
   return (
     <div className="shopping-cart-item row">
       <div className="col-lg-4">
-        <div 
-          className="shopping-cart-img" 
-          style={{ backgroundImage: 'url(./sig_1.jpg)' }}
-        />
+        <div className="shopping-cart-img">
+          <img src={ good.photo } />
+        </div>
       </div>
       <div className="col-lg-4">
         <div className="shopping-cart-desc">

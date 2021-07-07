@@ -4,6 +4,8 @@
   .good {
     position: relative;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
 
     .good-img {
 
@@ -14,6 +16,9 @@
 
     .good-info {
       margin-top: 20px;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
 
       .good-name, .good-price h2 {
         font-size: 18px;
@@ -32,9 +37,12 @@
         color: #636363;
       }
   
-      .justify-center {
+      .btn-wrapper {
         display: flex;
         justify-content: center;
+        align-items: flex-end;
+        justify-self: flex-end;
+        flex: 1 1 auto;
 
         .good-btn {
           width: 150px;
