@@ -67,7 +67,6 @@ export default () => {
             <Link to="/" className="navbar-link nav-link">home</Link>
             <Link to="/about" className="navbar-link nav-link">about us</Link>
             <Link to="/menu" className="navbar-link nav-link">menu</Link>
-            <Link to="#link" className="navbar-link nav-link">delivery</Link>
           </Nav>
         </Navbar.Collapse>
         <div 

@@ -3,7 +3,6 @@ import { shoppingCartContext } from '../../../contexts/shoppingCart.js';
 import { useCookies } from 'react-cookie';
 
 export default ({ good }) => {
-  const shoppingCartImg = useRef(null);
   const [cookies, setCookie] = useCookies(['shoppingCart']);
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const { name, price, quantity, description } = good;
@@ -37,8 +36,7 @@ export default ({ good }) => {
       <div className="col-lg-4">
         <div 
           className="shopping-cart-img" 
-          style={{ backgroundImage: 'url(sig_1.jpg)' }} 
-          ref={shoppingCartImg}
+          style={{ backgroundImage: 'url(./sig_1.jpg)' }}
         />
       </div>
       <div className="col-lg-4">

@@ -57,7 +57,7 @@ export default ({ good }) => {
   return (
     <div className="good col-lg-6">
       <div className="good-img">
-        <img src='sig_1.jpg'/>
+        <img src='./sig_1.jpg'/>
       </div>
       <div className="good-info">
         <div className="row">
