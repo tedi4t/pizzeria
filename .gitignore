@@ -8,9 +8,3 @@ logs
 
 .DS_Store
 
-front/public/
-<<<<<<< HEAD
-!front/public/index.html
-=======
-!front/public/index.html
->>>>>>> main
