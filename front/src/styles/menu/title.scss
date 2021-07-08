@@ -27,5 +27,17 @@ section#menu-title {
       font-family: 'PT Sans Narrow', sans-serif;
       line-height: 1.2;
     }
+
+    @media screen and (max-width: 768px) {
+      bottom: 30%;
+
+      h2 {
+        font-size: 36px;
+      }
+
+      h3 {
+        font-size: 56px;
+      }
+    }
   }
 }

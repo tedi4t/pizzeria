@@ -3,4 +3,14 @@ section#menu {
   padding-bottom: 80px;
   background: #f7fafb;
   border-top: 2px solid #c4ab9f;
+
+  @media screen and (max-width: 768px) {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
 }

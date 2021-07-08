@@ -34,7 +34,6 @@ export default () => {
     basicNavbarNav = document.getElementById('basic-navbar-nav');
     basicNavbarNav.classList.remove('show');
     basicNavbarNav.style.display = 'block';
-    console.log(basicNavbarNav);
     window.addEventListener('scroll', handleScroll);
   });
 
@@ -72,20 +71,22 @@ export default () => {
             <Link to="/about" className="navbar-link nav-link" onClick={ handleCloseClick }>about us</Link>
             <Link to="/menu" className="navbar-link nav-link" onClick={ handleCloseClick }>menu</Link>
           </Nav>
+
+          <Link
+            to = "/shoppingCart"
+            className="shopping-cart"
+            style={{ display: (price > 0) ? 'flex' : 'none' }}
+            onClick={ handleCloseClick }
+          >
+            <div className="shopping-cart-text">Корзина: { price } ₴</div>
+          </Link>
         </Navbar.Collapse>
         <div 
-          className="reservations ml-auto d-none d-lg-block"
-          style={{ display: (price === 0) ? 'block' : 'none' }}  
+          className="reservations ml-auto"
+          style={{ display: (price === 0 && width > 992) ? 'block' : 'none' }}
         >
           Reservations: +34 586 778 8892
         </div>
-        <Link
-          to = "/shoppingCart"
-          className="shopping-cart"
-          style={{ display: (price > 0) ? 'flex' : 'none' }}  
-        >
-          <div className="shopping-cart-text">Корзина: { price } ₴</div>
-        </Link>
       </Container>
     </Navbar>
   )

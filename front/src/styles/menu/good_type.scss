@@ -16,6 +16,11 @@
     padding-top: 69px;
     padding-bottom: 50px;
 
+    @media screen and (max-width: 768px) {
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+
     .good-types-element {
       font-family: 'PT Sans Narrow', sans-serif;
       font-size: 20px;

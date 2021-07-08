@@ -31,6 +31,10 @@
       align-items: flex-start;
       justify-content: center;
 
+      @media screen and (max-width: 992px) {
+        margin-top: 10px;
+      }
+
       h3 {
         font-size: 22px;
         text-transform: uppercase;
@@ -51,6 +55,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media screen and (max-width: 992px) {
+        margin-top: 10px;
+      }
 
       #quantity {
         font-family: 'PT Sans Narrow', sans-serif;
@@ -84,6 +92,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @media screen and (max-width: 992px) {
+        margin-top: 10px;
+      }
     }
   }
 

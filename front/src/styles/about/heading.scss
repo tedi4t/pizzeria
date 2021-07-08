@@ -4,6 +4,10 @@
   .heading {
     padding-top: 90px;
     padding-bottom: 100px;
+    
+    @media screen and (max-width: 768px) {
+      padding-bottom: 60px;
+    }
 
     .title {
       text-align: left;
@@ -20,7 +24,6 @@
         font-family: 'PT Sans Narrow', sans-serif;
         line-height: 1.2;
         color: #232323;
-
       }
     }
 

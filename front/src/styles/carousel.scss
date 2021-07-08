@@ -36,6 +36,16 @@ section#homepage {
           line-height: 1.2;
         }
 
+        @media screen and (max-width: 768px) {
+          h2 {
+            font-size: 40px;
+          }
+
+          h3 {
+            font-size: 45px;
+          }
+        }
+
         p {
           display: block;
           font-family: 'PT Sans Narrow', sans-serif;

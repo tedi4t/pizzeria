@@ -56,6 +56,10 @@
           transition-duration: .3s;
           margin-left: auto;
           margin-right: auto;
+
+          @media screen and (max-width: 992px) {
+            margin-top: 16px;
+          }
         }
     
         .good-btn:hover {
@@ -69,6 +73,10 @@
         align-items: center;
         justify-content: center;
         margin-top: 31px;
+
+        @media screen and (max-width: 992px) {
+          margin-top: 16px;
+        }
 
         #quantity {
           font-family: 'PT Sans Narrow', sans-serif;

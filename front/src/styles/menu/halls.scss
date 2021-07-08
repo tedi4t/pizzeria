@@ -25,6 +25,11 @@
     padding-top: 50px;
     padding-bottom: 50px;
 
+    @media screen and (max-width: 768px) {
+      padding-top: 20px;
+      padding-bottom: 0;
+    }
+
     .hall-element {
       font-family: 'PT Sans Narrow', sans-serif;
       font-size: 20px;
