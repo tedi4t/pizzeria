@@ -2,21 +2,29 @@
   padding-top: 40px;
   transition-duration: .4s;
 
+  .container {
+    @media screen and (max-width: 992px) {
+      position: relative;
+      display: block;
+    }
+  }
+
   .nav-brand {
     @media screen and (max-width: 992px) {
-      // display: block;
-      // margin-left: auto;
-      // margin-right: auto;
-      position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
+      // position: absolute;
+      // left: 50%;
+      // top: 0;
+      // transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-content: center;
     }
 
     h2 {
       font-size: 36px;
       line-height: 0.75;
       color: #FFFFFF;
+      text-align: center;
     }
   
     h3 {
@@ -63,6 +71,14 @@
 
   .navbar-toggler {
     margin-left: auto;
+
+    @media screen and (max-width: 992px) {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+  
+    }
 
     .navbar-toggler-icon, .navbar-toggler-icon::before, .navbar-toggler-icon::after {
       content: "";

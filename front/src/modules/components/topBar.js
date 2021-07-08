@@ -15,6 +15,9 @@ export default () => {
   let basicNavbarNav;
 
   const handleToggleClick = e => {
+    if (!basicNavbarNav) {
+      basicNavbarNav = document.getElementById('basic-navbar-nav');
+    }
     basicNavbarNav.classList.add('show');
   }
 
@@ -31,6 +34,7 @@ export default () => {
     basicNavbarNav = document.getElementById('basic-navbar-nav');
     basicNavbarNav.classList.remove('show');
     basicNavbarNav.style.display = 'block';
+    console.log(basicNavbarNav);
     window.addEventListener('scroll', handleScroll);
   });
 
@@ -62,15 +66,15 @@ export default () => {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" id="basic-navbar-button" onClick={handleToggleClick}/>
         <Navbar.Collapse id="basic-navbar-nav" style={{ display: basicNavbarNavDisplay }}>
-          <div className="close-btn d-block d-lg-none" onClick={handleCloseClick}>X</div>
+          <div className="close-btn d-block d-lg-none" onClick={ handleCloseClick }>X</div>
           <Nav className="ml-auto mr-auto">
-            <Link to="/" className="navbar-link nav-link">home</Link>
-            <Link to="/about" className="navbar-link nav-link">about us</Link>
-            <Link to="/menu" className="navbar-link nav-link">menu</Link>
+            <Link to="/" className="navbar-link nav-link" onClick={ handleCloseClick }>home</Link>
+            <Link to="/about" className="navbar-link nav-link" onClick={ handleCloseClick }>about us</Link>
+            <Link to="/menu" className="navbar-link nav-link" onClick={ handleCloseClick }>menu</Link>
           </Nav>
         </Navbar.Collapse>
         <div 
-          className="reservations ml-auto"
+          className="reservations ml-auto d-none d-lg-block"
           style={{ display: (price === 0) ? 'block' : 'none' }}  
         >
           Reservations: +34 586 778 8892
