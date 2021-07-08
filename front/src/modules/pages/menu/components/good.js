@@ -50,9 +50,14 @@ export default ({ good }) => {
       if (element.id === good.id) {
         setSelected(true);
         setQuantity(element.quantity);
+        break;
+      }
+      else {
+        setSelected(false);
+        setQuantity(1);
       }
     }
-  }, [])
+  }, [good])
 
   return (
     <div className="good col-lg-6">

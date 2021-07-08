@@ -22,6 +22,9 @@ export default () => {
   }
 
   const handleCloseClick = e => {
+    if (!basicNavbarNav) {
+      basicNavbarNav = document.getElementById('basic-navbar-nav');
+    }
     basicNavbarNav.classList.remove('show');
   }
 
