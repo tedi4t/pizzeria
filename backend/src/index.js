@@ -2,7 +2,7 @@
 
 const express = require('express');
 const helmet = require('helmet');
-const cors = require('cors')
+const cors = require('cors');
 const path = require('path');
 
 const PORT = process.env.PORT || 5000;
@@ -28,18 +28,18 @@ app.use(express.json({ limit: '50mb' }));
 app.use(helmet());
 app.use(cors({ origin: '*' }));
 
-routers.forEach(routerObj => {
+routers.forEach((routerObj) => {
   const router = require(`./routes/${routerObj.filename}`);
   app.use(`/api${routerObj.route}`, router);
-})
+});
 
 // to return react files
 const webpageRoutes = [
-  '/', 
-  '/about', 
-  '/menu', 
-  '/shoppingCart', 
-  '/shoppingCart/order'
+  '/',
+  '/about',
+  '/menu',
+  '/shoppingCart',
+  '/shoppingCart/order',
 ];
 app.use(express.static(path.join(__dirname, '../../front/public')));
 app.get(webpageRoutes, (req, res) => {

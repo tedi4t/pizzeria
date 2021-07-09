@@ -19,7 +19,7 @@ router.get('/hall/:hall_id/type/:type_id', async (req, res) => {
   const paramsAll = [type_id, hall_id];
   const got = (await pool.query(queryAll, paramsAll)).rows;
   res.status(200).json(JSON.stringify(got));
-})
+});
 
 router.get('/hall/:hall_id', async (req, res) => {
   const { hall_id } = req.params;
@@ -27,14 +27,14 @@ router.get('/hall/:hall_id', async (req, res) => {
   const paramsAll = [hall_id];
   const got = (await pool.query(queryAll, paramsAll)).rows;
   res.status(200).json(JSON.stringify(got));
-})
+});
 
 router.get('/type/all', async (req, res) => {
   const queryAll = queries['Good.typeAll'];
   const paramsAll = [];
   const got = (await pool.query(queryAll, paramsAll)).rows;
   res.status(200).json(JSON.stringify(got));
-})
+});
 
 router.get('/type/:type_id', async (req, res) => {
   const { type_id } = req.params;
@@ -42,13 +42,13 @@ router.get('/type/:type_id', async (req, res) => {
   const paramsAll = [type_id];
   const got = (await pool.query(queryAll, paramsAll)).rows;
   res.status(200).json(JSON.stringify(got));
-})
+});
 
 router.get('/all', async (req, res) => {
   const queryAll = queries['Good.all'];
   const paramsAll = [];
   const got = (await pool.query(queryAll, paramsAll)).rows;
   res.status(200).json(JSON.stringify(got));
-})
+});
 
 module.exports = router;

@@ -11,9 +11,9 @@ export default (url) => {
     mode: 'cors',
     credentials: 'same-origin',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     },
-  }
+  };
 
   const doFetch = useCallback((optionsFetch = {}) => {
     setIsLoading(true);
@@ -22,23 +22,23 @@ export default (url) => {
 
   useEffect(() => {
     if (!isLoading) return;
-    
+
     const totalOptions = {};
     Object.assign(totalOptions, defaultOptions, options);
 
     fetch(baseUrl + url, totalOptions)
-      .then(response => {
-        response.json().then(data => {
+      .then((response) => {
+        response.json().then((data) => {
           setIsLoading(false);
           setResponse(JSON.parse(data));
           setError(null);
-        })
+        });
       })
-      .catch(err => {
+      .catch((err) => {
         setIsLoading(false);
         setError(err);
-      })
+      });
   }, [options, isLoading]);
 
   return [{ response, isLoading, error }, doFetch];
-}
+};

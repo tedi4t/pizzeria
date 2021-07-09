@@ -11,22 +11,22 @@ export default ({ hallID, typeID }) => {
 
   const queryCondition = [
     {
-      condition: () => (hallID !== 0 && typeID !== 0),
+      condition: () => hallID !== 0 && typeID !== 0,
       url: `/good/hall/${hallID}/type/${typeID}`,
     },
     {
-      condition: () => (hallID === 0 && typeID !== 0),
+      condition: () => hallID === 0 && typeID !== 0,
       url: `/good/type/${typeID}`,
     },
     {
-      condition: () => (hallID !== 0 && typeID === 0),
+      condition: () => hallID !== 0 && typeID === 0,
       url: `/good/hall/${hallID}`,
     },
     {
-      condition: () => (hallID === 0 && typeID === 0),
+      condition: () => hallID === 0 && typeID === 0,
       url: `/good/all`,
     },
-  ]
+  ];
 
   useEffect(() => {
     setCookie('shoppingCart', JSON.stringify(shoppingCartState));
@@ -45,17 +45,14 @@ export default ({ hallID, typeID }) => {
 
   useEffect(() => {
     doFetch();
-  }, [url])
+  }, [url]);
 
   return (
-    <div id = "goods">
+    <div id="goods">
       <div className="row">
-        {
-          response && response.map((good, key) => (
-            <GoodElement good={good} key={key} />
-          ))
-        }
+        {response &&
+          response.map((good, key) => <GoodElement good={good} key={key} />)}
       </div>
     </div>
-  )
-}
+  );
+};

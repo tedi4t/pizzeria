@@ -5,11 +5,11 @@ import { shoppingCartContext } from '../contexts/shoppingCart';
 export default ({ children }) => {
   const [shoppingCartState, dispatch] = useContext(shoppingCartContext);
   const [cookies] = useCookies(['order']);
-  
+
   useEffect(() => {
     const shoppingCart = cookies['shoppingCart'] || [];
-    dispatch({ type: 'addGood', payload: shoppingCart })
+    dispatch({ type: 'addGood', payload: shoppingCart });
   }, []);
 
   return children;
-}
+};

@@ -554,7 +554,7 @@ var Address = function Address(_ref) {
     className: "footer-logo-subtitle"
   }, "restaurant")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "copyright"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Copyright \xA9 2021 All rights reserved ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), " Tedi4t's react app "))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "Copyright \xA9 2021 All rights reserved ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), " Tedi4t's react app", ' '))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "col-lg-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "footer-main-text"
@@ -870,7 +870,6 @@ var reducer = function reducer(state, action) {
         _iterator.f();
       }
 
-      ;
       return newState;
     },
     removeGood: function removeGood() {
@@ -894,7 +893,6 @@ var reducer = function reducer(state, action) {
         _iterator2.f();
       }
 
-      ;
       return newState;
     },
     clearState: function clearState() {
@@ -1233,8 +1231,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
       selected = _useState4[0],
-      setSelected = _useState4[1]; // console.log({ name: good.name, quantity });
-
+      setSelected = _useState4[1];
 
   var handleOrderBtn = function handleOrderBtn(e) {
     setSelected(true);
@@ -1288,18 +1285,14 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    console.log('called');
-
     var _iterator = _createForOfIteratorHelper(shoppingCartState),
         _step;
 
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
         var element = _step.value;
-        console.log(element, good);
 
         if (element.id === good.id) {
-          console.log(true);
           setSelected(true);
           setQuantity(element.quantity);
           break;

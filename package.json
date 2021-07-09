@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./backend/src/index.js",
     "lint": "eslint . && prettier -c \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/*.yml\"",
-    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\" \"**/*.yml\"",
+    "fmt": "prettier --write \"**/*.js\" \"**/*.json\" \"**/*.md\"",
     "watch": "webpack --mode development --watch"
   },
   "repository": {

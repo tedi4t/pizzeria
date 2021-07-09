@@ -17,15 +17,15 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
         test: /\.js?$/,
         exclude: /(node_modules)/,
-        loader: "babel-loader",
-        options:{
-          presets:["@babel/preset-env", "@babel/preset-react"]
-        }
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env', '@babel/preset-react'],
+        },
       },
       {
         test: /\.css$/,
@@ -33,16 +33,16 @@ module.exports = {
       },
       {
         test: /\.(scss|sass)$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(ttf|otf)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ['file-loader']
+        use: ['file-loader'],
       },
-    ]
-  }
-} 
+    ],
+  },
+};

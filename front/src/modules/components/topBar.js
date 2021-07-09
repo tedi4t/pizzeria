@@ -14,24 +14,24 @@ export default () => {
 
   let basicNavbarNav;
 
-  const handleToggleClick = e => {
+  const handleToggleClick = (e) => {
     if (!basicNavbarNav) {
       basicNavbarNav = document.getElementById('basic-navbar-nav');
     }
     basicNavbarNav.classList.add('show');
-  }
+  };
 
-  const handleCloseClick = e => {
+  const handleCloseClick = (e) => {
     if (!basicNavbarNav) {
       basicNavbarNav = document.getElementById('basic-navbar-nav');
     }
     basicNavbarNav.classList.remove('show');
-  }
+  };
 
-  const handleScroll = e => {
+  const handleScroll = (e) => {
     const pageYOffset = window.pageYOffset;
-    if (pageYOffset)  setScrollTop(window.pageYOffset);
-  }
+    if (pageYOffset) setScrollTop(window.pageYOffset);
+  };
 
   document.addEventListener('DOMContentLoaded', () => {
     basicNavbarNav = document.getElementById('basic-navbar-nav');
@@ -50,8 +50,10 @@ export default () => {
   }, [scrollTop]);
 
   useEffect(() => {
-    let priceCounting = shoppingCartState
-      .reduce((acc, element) => acc + element.price * element.quantity, 0);
+    let priceCounting = shoppingCartState.reduce(
+      (acc, element) => acc + element.price * element.quantity,
+      0
+    );
     setPrice(priceCounting);
   }, [shoppingCartState]);
 
@@ -59,38 +61,64 @@ export default () => {
     <Navbar expand="lg" fixed="top" expanded id="navbar">
       <Container>
         <Link to="/" className="nav-brand navbar-brand">
-          <h2>
-            The Venue
-          </h2>
-          <h3>
-            Restaurant
-          </h3>
+          <h2>The Venue</h2>
+          <h3>Restaurant</h3>
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" id="basic-navbar-button" onClick={handleToggleClick}/>
-        <Navbar.Collapse id="basic-navbar-nav" style={{ display: basicNavbarNavDisplay }}>
-          <div className="close-btn d-block d-lg-none" onClick={ handleCloseClick }>X</div>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          id="basic-navbar-button"
+          onClick={handleToggleClick}
+        />
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          style={{ display: basicNavbarNavDisplay }}
+        >
+          <div
+            className="close-btn d-block d-lg-none"
+            onClick={handleCloseClick}
+          >
+            X
+          </div>
           <Nav className="ml-auto mr-auto">
-            <Link to="/" className="navbar-link nav-link" onClick={ handleCloseClick }>home</Link>
-            <Link to="/about" className="navbar-link nav-link" onClick={ handleCloseClick }>about us</Link>
-            <Link to="/menu" className="navbar-link nav-link" onClick={ handleCloseClick }>menu</Link>
+            <Link
+              to="/"
+              className="navbar-link nav-link"
+              onClick={handleCloseClick}
+            >
+              home
+            </Link>
+            <Link
+              to="/about"
+              className="navbar-link nav-link"
+              onClick={handleCloseClick}
+            >
+              about us
+            </Link>
+            <Link
+              to="/menu"
+              className="navbar-link nav-link"
+              onClick={handleCloseClick}
+            >
+              menu
+            </Link>
           </Nav>
 
           <Link
-            to = "/shoppingCart"
+            to="/shoppingCart"
             className="shopping-cart"
-            style={{ display: (price > 0) ? 'flex' : 'none' }}
-            onClick={ handleCloseClick }
+            style={{ display: price > 0 ? 'flex' : 'none' }}
+            onClick={handleCloseClick}
           >
-            <div className="shopping-cart-text">Корзина: { price } ₴</div>
+            <div className="shopping-cart-text">Корзина: {price} ₴</div>
           </Link>
         </Navbar.Collapse>
-        <div 
+        <div
           className="reservations ml-auto"
-          style={{ display: (price === 0 && width > 992) ? 'block' : 'none' }}
+          style={{ display: price === 0 && width > 992 ? 'block' : 'none' }}
         >
           Reservations: +34 586 778 8892
         </div>
       </Container>
     </Navbar>
-  )
-}
+  );
+};

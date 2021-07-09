@@ -8,5 +8,5 @@ export default () => {
         Замовити
       </Link>
     </div>
-  )
-}
+  );
+};

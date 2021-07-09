@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-  BrowserRouter as Router,
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './styles/styles.js';
-import Routes from './modules/routes.js'
+import Routes from './modules/routes.js';
 import TopBar from './modules/components/topBar.js';
 import { ShoppingCartProvider } from './modules/contexts/shoppingCart.js';
 import { CookiesProvider } from 'react-cookie';
@@ -25,7 +23,4 @@ function App() {
   );
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));

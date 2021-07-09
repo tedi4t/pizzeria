@@ -5,14 +5,12 @@ import Chefs from './components/chefs.js';
 import Footer from '../../components/footer.js';
 
 export default () => {
-  
-
   return (
     <section id="about">
-      <Title text="About Us"/>
+      <Title text="About Us" />
       <Heading />
       <Chefs />
       <Footer />
     </section>
-  )
-}
+  );
+};

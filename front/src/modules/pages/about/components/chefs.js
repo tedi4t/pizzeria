@@ -11,17 +11,13 @@ const ChefElement = ({ name, position, imgSrc }) => {
       <div className="chef">
         <img className="chef-img" src={imgSrc} />
         <div className="description">
-          <div className="name">
-            { name }
-          </div>
-          <div className="position">
-            { position }
-          </div>
+          <div className="name">{name}</div>
+          <div className="position">{position}</div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default () => {
   const chefs = [
@@ -45,22 +41,17 @@ export default () => {
       position: 'Sauce Chef',
       imgSrc: chef4,
     },
-  ]
+  ];
 
   return (
     <div className="chefs">
       <Container>
         <div className="row">
-          {
-            chefs.map((chef, id) => (
-              <ChefElement 
-                key={id}
-                { ...chef }
-              />
-            ))
-          }
+          {chefs.map((chef, id) => (
+            <ChefElement key={id} {...chef} />
+          ))}
         </div>
       </Container>
     </div>
-  )
-}
+  );
+};

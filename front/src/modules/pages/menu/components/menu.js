@@ -13,10 +13,10 @@ export default () => {
       <Container>
         <div className="row">
           <div className="col-lg-2">
-            <Halls hallID={hallID} setHallID={setHallID}/>
+            <Halls hallID={hallID} setHallID={setHallID} />
           </div>
           <div className="col-lg-2">
-            <GoodTypes typeID={typeID} setTypeID={setTypeID}/>
+            <GoodTypes typeID={typeID} setTypeID={setTypeID} />
           </div>
           <div className="col-lg-8">
             <Goods hallID={hallID} typeID={typeID} />
@@ -24,5 +24,5 @@ export default () => {
         </div>
       </Container>
     </section>
-  )
-}
+  );
+};
