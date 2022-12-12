@@ -8,9 +8,7 @@ const connectionUrl = `postgresql://${PG_USER}:${PG_PASSWORD}@${PG_HOST}:${PG_PO
 
 const config = {
   connectionString: connectionUrl,
-  ssl: {
-    rejectUnauthorized: false
-  }
+  ssl: false,
 };
 
 const pool = new Pool(config);
